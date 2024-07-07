@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Vanguard Solutions
+        </title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/C4 Icafe Timer.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://cdnjs.cloudfare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <!-- swiper --> 
+    </head>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+     <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/logoimpact.png" alt="Logo" class="navbar-logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Support</a></li>
+                      
+                        <li class="nav-item"><a class="nav-link" href="#about">RoadMap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Price</a></li>
+                        <li class="nav-item dropdown" id="loggedInDropdown" style="display: none;">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                LogOut
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Admin</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="logout()">Log Out</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginLink">
+                                LogIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title mx-auto" id="loginModalLabel">VANGUARD LOG IN</h5>
+                    </div>
+                    <div class="modal-body" id="lgn">
+                        <!-- Your login form goes here -->
+                        <form id="loginForm">
+                            <div class="mb-3 d-flex align-items-center transparent-input-container">
+                                <input type="name" class="form-control transparent-input" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off" placeholder="Username">
+                            </div>
+                            <div class="mb-3 d-flex align-items-center transparent-input-container">
+                                <input type="password" class="form-control transparent-input" id="exampleInputPassword1" placeholder="Password">
+                                <button class="btn btn-outline-secondary" type="button" id="showPasswordToggle">
+                                    <i id="eye" class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-secondary w-100">Log in</button>
+                                </div>
+                                <div class="col">
+                                    <button id="signupButton" type="button" class="btn btn-secondary w-100">Sign up</button>
+                                </div>
+                            </div>
+                            <div class="text-end mt-3">
+                                <a id="ps" href="#" onclick="forgot()">Forgot Password ?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To</div>
+                <div class="masthead-heading text-uppercase"><span class="support-text">VANGUARD</span></div>
+                <div class="website-info">Designed to manage Internet cafes efficiently, ensuring smooth operations and customer satisfaction</div>
+                <div class="website-info">Streamlines tasks such as user access, billing, and resource allocation, enhancing the overall management experience</div>
+                <br><br>
+                <a class="btn btn-secondary btn-xl text-uppercase custom-btn" id="scrollToServices" href="#services">Tell Me More</a>
+                <a class="btn btn-secondary btn-xl text-uppercase custom-btn" data-bs-toggle="modal" data-bs-target="#demoModal" id="request">Request a Demo</a>
+                <ul class="left-align-list">
+                    <li><img class="nike" src="assets/img/team/data_.png"> Valued by 1208 clients</li>
+                    <li><img class="nike" src="assets/img/team/data_.png"> Introduced By ALFORDTECH</li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Demo Request Modal -->
+        
+        <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mx-auto" id="demoModalLabel">Request a <span class="support-text">Demo</span></h5>
+                        
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Demo request form -->
+                        <form id="demoForm" action="https://formsubmit.co/joda.larita@gmail.com" method="POST" autocomplete="off">
+                            <!-- Add a hidden input for a redirect URL if desired -->
+                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/joda/thankyou.html">
+                            <!-- Add a hidden input for form submission protection -->
+                            <input type="hidden" name="_captcha" value="true">
+                            <!-- Add your form fields -->
+                            <div class="mb-3">
+                                <input type="text" class="form-control custom-input" name="Name" id="demoName" placeholder="Your Name" required autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control custom-input" name="Email" id="demoEmail" placeholder="Your Email" required autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control custom-input" name="Phone" id="demoPhone" placeholder="Your Phone Number" required autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control custom-input" name="Message" id="demoMessage" rows="3" placeholder="Message Here" required autocomplete="off"></textarea>
+                            </div>
+                            <button type="submit" id="submitButton" class="btn btn-secondary w-100">Request A Demo</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="page-section" id="portfolio">
+            <div class="container" data-aos="fade-down">
+                <div class="text-center">
+                    <h2 class="section-heading">
+                    Launching a <span class="support-text shadow-text">gaming</span> venue
+                    </h2>
+                    <ul class="horizontal-list listing"data-aos="zoom-in" data-aos-duration="1600">
+                        <li><img class="nike" src="assets/img/team/data_.png"> Gaming Lounge</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> CO-Working Space</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Cybercafe</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Cafeteria</li>
+                    </ul>
+
+                    <ul class="horizontal-list listing"data-aos="zoom-in" data-aos-duration="1800">
+                        <li><img class="nike" src="assets/img/team/data_.png"> Internet Cafe</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Lodging House</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> LAN Gaming</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> POS w/ Inventory</li>
+                    </ul>
+
+                    
+                </div>
+            </div>
+        </section>
+        
+
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container" data-aos="fade-down">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">
+                Vanguard <span class="support-text shadow-text">Support</span>
+            </h2>
+            <h3 class="section-subheading text-muted" id="trans">
+                <a>Transforming Cybercafe Management with customizable Timer and seamless diskless server technology.</a>
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-left" >
+                <div class="service-box">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa-2x"><i class="fas fa-layer-group"></i></span> <span class="service-text">Regular Updates and Maintenance</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-left" >
+                <div class="service-box">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa-2x"><i class="fas fa-coins"></i></span> <span class="service-text">Integrated Point-of-Sale Systems</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-left" >
+                <div class="service-box">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa-2x"><i class="fas fa-lock"></i></span> <span class="service-text">Enhanced Security Features</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-left" >
+                <div class="service-box">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa-2x"><i class="fas fa-chalkboard-user"></i></span> <span class="service-text">Training and Onboarding</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-left" >
+                <div class="service-box">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa-2x"><i class="fa fa-headset"></i></span> <span class="service-text">24/7 Customer Support</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-left" >
+                <div class="service-box">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li fa-2x"><i class="fas fa-users"></i></span> <span class="service-text">User-Friendly Interface</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase"data-aos="fade-up">
+                    Scale your cyber cafe with advanced <span class="support-text shadow-text">Management tools.    </span>
+                  </h2>
+               
+            </div>
+            <div class="container1 container-right"data-aos="zoom-in" data-aos-duration="2000">
+                <img class="animated-image"src="assets/img/team/vanguardserver1.png" alt="Descriptive Alt Text">
+                <div class="text"data-aos="fade-up">
+                    <div class="header">Tailored <span class="support-text shadow-text">Diskless</span> System</div>
+                    <div class="details">Introducing Vanguard by Alford Tech!</div>
+                    <div class="details"> Fully integrated into the Vanguard admin interface, it addresses three critical business challenges: slow manual game updates, virus proliferation, and safeguarding customer sensitive data. Say goodbye to these issues with Vanguard!</div>
+                </div>
+            </div>
+        
+            <div class="container1 container-left"data-aos="zoom-in" data-aos-duration="2000">
+                <img class="animated-image" src="assets/img/team/statistics.png" alt="Descriptive Alt Text">
+                <div class="text"data-aos="fade-up">
+                    <div class="header">Cybercafe <span class="support-text shadow-text">Statistics</span> System</div>
+                    <div class="details">Analyzing data statistics for cybercafes offers insights into customer preferences and usage habits. Understanding these statistics helps cybercafes tailor their services to meet diverse customer needs.
+                        <ul class="stats1">
+                            <li><img class="nike" src="assets/img/team/data_.png"> View PC Usage Statistics</li>
+                            <li><img class="nike" src="assets/img/team/data_.png"> Daily Sales Statistics Records and report</li>
+                            <li><img class="nike" src="assets/img/team/data_.png"> Member Top Statistics by Selected Date range</li>
+                            <li><img class="nike" src="assets/img/team/data_.png"> Log History both User and Client</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container1 container-right"data-aos="zoom-in" data-aos-duration="2000">
+                <img class="animated-image" src="assets/img/team/lockscreen.png" alt="Descriptive Alt Text">
+                <div class="text"data-aos="fade-up">
+                    <div class="header"><span class="support-text shadow-text">Brand Adventisements</span> for mutual benefit.</div>
+                    <div class="details">Optimize your computer fleet to broaden income sources. Be the focal point of your local gaming community to attract sponsorship opportunities.
+                    <ul class="stats1">
+                        <li><img class="nike" src="assets/img/team/data_.png"> Customize Client LockScreen Background</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Advertisements Autoplay</li>
+                        
+                    </ul>
+                </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="page-section bg-light" id="test">
+            <div class="container">
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase" data-aos="fade-up"><span class="support-text shadow-text">Everything is accessible </span><span class="somp"></span></h2>
+                    <h2 class="section-heading text-uppercase" data-aos="fade-up"><span class="support-text shadow-text"></span><span class="somp">click from where you sit.</span></h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-center">
+                        <div class="text-left" data-aos="fade-down">
+                            <ul style="list-style-type: none; padding: 0;">
+                                <li>
+                                    <img class="check" src="assets/img/team/data_.png">
+                                    <span class="white">Personalized gaming accounts for all players.</span>
+                                </li>
+                                <li>
+                                    <img class="check" src="assets/img/team/data_.png">
+                                    <span class="white">Digital shop offering both food products and merchandise for sale.</span>
+                                </li>
+                                <li>
+                                    <img class="check" src="assets/img/team/data_.png">
+                                    <span class="white">E-Cash Payment</span>
+                                </li>
+                                <li>
+                                    <img class="check" src="assets/img/team/data_.png">
+                                    <span class="white">Redeem Points Reward For Top Players</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center justify-content-end">
+                        <img src="assets/img/team/client.png" alt="Second Image" class="img-fluid align-right free-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container" data-aos="fade-up">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase"><span class="support-text shadow-text">RoadMap</span></h2>
+                    <h3 class="section-subheading text-muted"><a> Our dedicated team is committed to providing top-notch solutions that drive your business forward. <br> Discover our story, our values, and how we can partner with you to achieve unparalleled success.</a> </h3>
+                </div>
+                <ul class="timeline"data-aos="fade-up">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.png"data-aos="fade-up" ></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading" data-aos="fade-down">
+                                <br>
+                                <h4><span class="support-text">Vanguard</span> ICAFE Timer With Integration  of POS</h4>
+                                
+                            </div>
+                            <div class="timeline-body" data-aos="fade-up"><p class="text-muted"><a>A comprehensive solution for Internet cafes, combining usage management with robust sales transaction capabilities.</a></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.png" alt="..." data-aos="fade-up"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading" data-aos="fade-down">
+                                <br>
+                                <h4>Integration of <span class="support-text">CO-Working</span> Space System</h4>
+                                <h4 class="subheading"></h4>
+                           
+                            </div>
+                            <div class="timeline-body" data-aos="fade-up"><p class="text-muted"><a>Provides a comprehensive and efficient solution for managing co-working spaces, improving both the user experience and operational effectiveness.</a> </p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.png" alt="..." data-aos="fade-up"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading" data-aos="fade-down">
+                                <br>
+                                <h4><span class="support-text">DTR</span> (Facial Recognition)</h4>
+                                <h4 class="subheading">And Payroll System</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted" data-aos="fade-up"><a>Improved accuracy, efficiency, and security in managing employee attendance and payroll processes.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.png" alt="..." data-aos="fade-up"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading" data-aos="fade-down">
+                                <br>
+                                <h4>Centralized <span class="support-text">Database</span></h4>
+                                <h4 class="subheading">Cloud-Based Data</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted" data-aos="fade-up"><a>Cloud-based data storage combines the benefits of centralized data management with the scalability, accessibility, and cost efficiency offered by cloud computing.</a></p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/5.png" alt="..." data-aos="fade-up"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading" data-aos="fade-down">
+                                <br>
+                                <h4><span class="support-text">Cashier-Less</span></h4>
+                                <h4 class="subheading">Machine</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted" data-aos="fade-up"><a>Enhances the overall user experience by providing self-service capabilities for session management and payments.</a></p></div>
+                        </div>
+                    </li>   
+
+                    
+                    <li class="timeline-inverted" data-aos="flip-left">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Story!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section bg-light" id="portfolio">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase"data-aos="fade-up">
+                    Stay on top. Give the ultimate  <span class="support-text shadow-text">customer satisfaction.</span>
+                  </h2>
+            </div>
+          
+        
+            <div class="container1 container-right"data-aos="zoom-in" data-aos-duration="2000">
+                <img class="animated-image" src="assets/img/team/member (1).png" alt="Descriptive Alt Text">
+                <div class="text"data-aos="fade-up">
+                    <div class="header">Client Membership <span class="support-text shadow-text">Management System</span></div>
+                    <div class="details">Optimize your computer fleet to broaden income sources. Be the focal point of your local gaming community to attract sponsorship opportunities.
+                    <ul class="stats1">
+                        <li><img class="nike" src="assets/img/team/data_.png"> Client Subscription</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Customizable Promo rate System</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Client Membership Rewards</li>
+                        <li><img class="nike" src="assets/img/team/data_.png"> Client Feedback System</li>
+                        
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="container1 container-left"data-aos="zoom-in" data-aos-duration="2000">
+                <img class="animated-image" src="assets/img/team/caf.png" alt="Descriptive Alt Text">
+                <div class="text"data-aos="fade-up">
+                    <div class="header">Integrated <span class="support-text shadow-text">Cafeteria</span> System</div>
+                    <div class="details">Combines advanced technology with seamless user experience to revolutionize dining services. Ideal for various settings, it enhances efficiency and customer satisfaction, setting a new standard in modern dining experiences.
+                        <ul class="stats1">
+                            <li><img class="nike" src="assets/img/team/data_.png"> Order Via Account Balance</li>
+                            <li><img class="nike" src="assets/img/team/data_.png"> Track Cash Tethering Logs</li>
+                            <li><img class="nike" src="assets/img/team/data_.png"> Stocks Inventory Management</li>
+                            <li><img class="nike" src="assets/img/team/data_.png"> Customizable Item list and Pricing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase" data-aos="fade-up">JOIN <span class="support-text shadow-text">VANGUARD</span></h2>
+                    <h3 class="section-subheading text-muted" data-aos="fade-up"><a>Start your Amazing Journey with Us</a></h3>
+                </div>
+                <div class="row">
+                    <div class="team-member" data-aos="zoom-in" data-aos-duration="3000">
+                        <img class="mx-auto promo-circle custom-image animated-image" src="assets/img/team/alfordtechcorp1.png" alt="...">
+                        <div class="col-lg-4 d-flex align-items-center justify-content-center">
+                            <div class="text-center" data-aos="fade-down">
+                                <h4>₱5,000.00</h4>
+                                <p class="text-muted">PACKAGE</p>
+                                <p class="text-muted"><a> ₱30.00 every month per client</a></p>
+                                <a class="btn btn-light btn-social mx-2" href="#!" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-light btn-social mx-2" href="#!" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="btn btn-light btn-social mx-2" href="#!" aria-label="Telegram Profile"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-down">
+                        <p class="large text-muted"><a> Unlock the full potential of your business by joining our Vanguard Package, and experience exclusive benefits tailored to drive your success.</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Clients
+        <div class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/arsenal-lapu.svg" alt="..." aria-label="Microsoft Logo" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/crayon.svg" alt="..." aria-label="Google Logo" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/arsenal-colon.svg" alt="..." aria-label="Facebook Logo" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/bpo.svg" alt="..." aria-label="IBM Logo" /></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Contact-->
+        
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <div class="col-lg-4"><a>Copyright &copy; Alford Tech Corp. 2024</a></div>
+                        <div class="col-lg-4 my-3 my-lg-0">
+                      </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+    
+
+
+        <button id="openCloseButton" class="open-close-button">
+          <img id="buttonImage" src="demo.png" alt="Icon">
+      </button>
+
+      <!-- Popup message box -->
+      <div id="popupBox" class="popup-box">
+        <div class="popup-content">
+            <h2><a>Request a Demo?</a></h2>
+            <form id="contactForm" action="https://formsubmit.co/joda.larita@gmail.com" method="POST">
+                <div class="input-group">
+                    <input class="form-input" id="userName" name="name" type="text" placeholder="Name *" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <input class="form-input" id="userEmail" name="email" type="email" placeholder="Email *" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <input class="form-input" id="contactNumber" name="contactNumber" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="Contact Number *" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <textarea class="form-input" id="userMessage" name="message" placeholder="Your Message *" required autocomplete="off"></textarea>
+                </div>
+                <!-- Add hidden field for redirecting to a thank you page after form submission -->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/joda/thankyou.html">
+                <input type="hidden" name="_template" value="box">
+                <!-- Add hidden field to prevent spam -->
+                <input type="hidden" name="_captcha" value="true">
+                <div class="btn-container">
+                    <button type="submit" class="btn-submit" id="submitButton">Send <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Custom Alert Box -->
+    <div id="customAlert" class="custom-alert" style="display: none;">
+        
+        <p>Sending Form Please Wait...</p>
+    </div>
+       
+     
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+      
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        var submitButton = document.getElementById('submitButton');
+        submitButton.innerHTML = 'Please wait...'; // Change button text to 'Please wait...'
+        submitButton.disabled = true; // Disable button to prevent multiple submissions
+
+        // Show the custom alert
+        var customAlert = document.getElementById('customAlert');
+        customAlert.style.display = 'block';
+
+        // Submit the form after showing the alert
+        setTimeout(function() {
+            document.getElementById('contactForm').submit(); // Submit the form after a short delay
+        }, 1000); // Adjust the delay as needed (1000ms = 1s)
+    });
+
+    function removeAOSAttributes() {
+        if (window.innerWidth < 768) { // Mobile mode threshold
+            var aosElements = document.querySelectorAll('[data-aos]');
+            aosElements.forEach(function(element) {
+                element.removeAttribute('data-aos');
+            });
+        }
+    }
+
+    window.addEventListener('resize', removeAOSAttributes);
+    window.addEventListener('load', removeAOSAttributes);
+</script>
+
+    </body>
+    
+</html>
